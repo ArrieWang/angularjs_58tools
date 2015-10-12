@@ -1,0 +1,25 @@
+[{
+	"cityId"="1",
+	"cityName"="beijing"
+},{
+	"cityId"="2",
+	"cityName"="tianjin"
+},{
+	"cityId"="3",
+	"cityName"="shengyang"
+},{
+	"cityId"="4",
+	"cityName"="changchun"
+},{
+	"cityId"="5",
+	"cityName"="haerbin"
+},{
+	"cityId"="6",
+	"cityName"="shenzhen"
+},{
+	"cityId"="7",
+	"cityName"="shanghai"
+},{
+	"cityId"="8s",
+	"cityName"="guangzhou"
+}]
