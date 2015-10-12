@@ -1,0 +1,63 @@
+像我们刚才做的那样，让我们调用 $http 服务来创建一个请求，这一次是为了取得所有音频文件。我们想让这个服务在controller实例化时启动，所以我们只需要把这个方法直接放在controller函数里（这个函数在controller被创建时就会被调用），像这样：
+
+var apiKey = 'YOUR_KEY',
+    nprUrl = 'http://api.npr.org/query?id=61&fields=relatedLink,title,byline,text,audio,image,pullQuote,all&output=JSON';
+ 
+app.controller('PlayerController', function($scope, $http) {
+  
+// Hidden our previous section's content
+  
+// construct our http request
+  $http({
+    method: 'JSONP',
+    url: nprUrl + '&apiKey=' + apiKey + '&callback=JSON_CALLBACK'
+  }).success(function(data, status) {
+    
+// Now we have a list of the stories (data.list.story)
+    
+// in the data object that the NPR API 
+    
+// returns in JSON that looks like:
+    ng-
+// data: { "list": {
+    
+//   "title": ...
+    
+//   "story": [
+    
+//     { "id": ...
+    
+//       "title": ...
+  }).error(function(data, status) {
+    
+// Some error occurred
+  });
+});
+
+
+第五部分 表达式
+
+要想理解指令属性的运作，我们必须先理解表达式，所以这里我们就绕个路，看看本系列的第五部分——表达式。在之前的例子里我们已经见过表达式，例如 {{ person.name }} 和 {{ clock }}。
+
+1
+2
+3
+{{ 8 + 1 }}9
+{{ person }}{"name":"Ari Lerner"}
+{{ 10 * 3.3 | currency }}$33.00
+最后的例子里 (10 * 3.3 | currency) 用了一个过滤器。本系列之后的部分，会深入介绍过滤器。
+
+表达式粗略来看有点像 eval(javascript) 的结果。它们会经过Angular.js的处理，从而拥有以下重要而独特的性质：
+
+所有表达式都在scope这个context里被执行，因此可以使用所有本地 $scope 中的变量。
+如果一个表达式的执行导致类型错误或引用错误，这些错误将不会被抛出。
+表达式里不允许任何控制函数流程的功能（如if/else等条件语句）
+表达式可接受一个或多个串联起来的过滤器。
+
+
+可以使用ng-repeat来遍历返回的数值
+<ul id="programs_list" class="">
+   <li ng-repeat="program in programs">
+     <span class="large-12">{{ program.title.$text }}</span>
+   </li>
+</ul>
