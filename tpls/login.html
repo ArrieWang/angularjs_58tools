@@ -1,6 +1,20 @@
-<form name="info" ng-submit="save()" ng-controller="Module">
- 		<input name="username" type="text" ng-model="user.userName" required/>
- 		<input name="password" type="password" ng-model="user.password" required/>
- 		<span  ui-sref="home"><a  type="submit" href="">登录</a></span>
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputUsername">用户名</label>
+    <div class="controls">
+      <input type="text" id="inputUsername" placeholder="请输入用户名" ng-model="user.userName" required>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">密码</label>
+    <div class="controls">
+      <input type="password" id="inputPassword" placeholder="请输入密码"  ng-model="user.password" required>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <a ui-sref="home" class="btn btn-success btn-lg">登录</a>
+    </div>
+  </div>
 </form>
 <!-- ng-disabled="info.$invalid" -->

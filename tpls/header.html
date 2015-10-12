@@ -1,15 +1,6 @@
 <header>
 	<div class="headInfo">
 		<span>您好,{{user.userName}}</span>
-		<a href="tpls/login.html">退出</a>
+		<a  ui-sref="index">退出</a>
 	</div>
-	<nav>
-		<ul>
-			<li ui-sref=".refresh"><a href="">优先刷新</a></li>
-			<li ui-sref=".settop"><a href="">车源添加</a></li>
-			<li ui-sref=".carsInfo"><a href="">车源信息</a></li>
-		</ul>
-	</nav>
-	<div ui-view="main1"></div>
-	<div ui-view="main2"></div>
 </header>

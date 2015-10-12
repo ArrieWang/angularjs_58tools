@@ -34,22 +34,34 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: 'tpls/header.html'
                 },
                 'main1@home': {
-                    templateUrl: 'tpls/city.html'
-                },
-                'main2@home': {
-                    templateUrl: 'tpls/settop.html'
+                    templateUrl: 'tpls/content.html'
                 }
+                //city应该排列在content中
             }
         })
-        .state('header.refresh',{
+        .state('content',{
+            url:'/content',
+            views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
+                '': {
+                    templateUrl: 'tpls/content.html'
+                },
+                'city@content': {
+                    templateUrl: 'tpls/city.html'
+                },
+                // '@content':{
+                //     templateUrl:'tpls/refresh.html'
+                // }
+            }
+        })       
+        .state('home.page1',{
             url:'/refresh',
             templateUrl:'tpls/refresh.html'
         })
-        .state('header.settop',{
+        .state('home.page2',{
             url:'/settop',
             templateUrl:'tpls/settop.html'
         })
-        .state('header.carsInfo',{
+        .state('home.page3',{
             url:'/carsInfo',
             templateUrl:'tpls/carsInfo.html'
         })
