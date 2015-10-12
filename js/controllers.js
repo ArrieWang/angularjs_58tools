@@ -17,9 +17,8 @@ CityModule.controller('citySyncCtrl', ['$scope', function($scope){
 	$scope.remove = function (index) {
             $scope.items.splice(index, 1);
         }
-            //     $http.get('../data/citys.json')
-            //         .success(function(data, status, headers, config) {
-            //         	$scope = data;
+            // $http.get('../data/citys.json')
+            //     .success(function(data, status, headers, config) {
             //             data = largeLoad.filter(function(item) {
             //                 return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
             //             });

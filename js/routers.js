@@ -47,13 +47,14 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         })
         // .state('content',{
         //     url:'/content',
-        //     views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
-        //         '': {
+        //     controller:'js/controllers.js',
+        //     // views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
+        //     //     '': {
         //             templateUrl: 'tpls/content.html'
-        //         },
-        //         'city@content': {
-        //             templateUrl: 'tpls/city.html'
-        //         },
+        //         // },
+        //         // 'city@content': {
+        //         //     templateUrl: 'tpls/city.html'
+        //         // },
         //         // '@content':{
         //         //     templateUrl:'tpls/refresh.html'
         //         // }
