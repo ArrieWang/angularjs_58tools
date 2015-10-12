@@ -1,6 +1,6 @@
-<div class="city">
+<div class="city" ng-controller="citySyncCtrl">
 <!-- 用$http从data中模拟取出city名称遍历 -->
 	<button  ng-repeat="city in citys">
-		{{city.name}}
+		{{city.cityName}}
 	</button>
 </div>

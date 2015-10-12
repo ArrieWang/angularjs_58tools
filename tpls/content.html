@@ -1,14 +1,19 @@
 <div>
 <!-- nav -->
-	<nav>
-		<ul>
-			<li ui-sref=".page1"><a href="">优先刷新</a></li>
+	<nav class="navbar navbar-default" role="navigation">
+		<ul class="nav nav-pills">
+			<li class="active" ui-sref=".page1"><a href="">优先刷新</a></li>
 			<li ui-sref=".page2"><a href="">车源添加</a></li>
 			<li ui-sref=".page3"><a href="">车源信息</a></li>
 		</ul>
 	</nav>
 <!-- city -->
-	<div ui-view="city"></div>
+<!-- 	<div class="city" ng-controller="citySyncCtrl">
+用$http从data中模拟取出city名称遍历
+	<button  ng-repeat="city in citys">
+		{{city.cityName}}
+	</button>
+	</div> -->
 <!-- formContent -->
 	<div ui-view=""></div>
 </div>

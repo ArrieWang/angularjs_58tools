@@ -1,4 +1,10 @@
-var routerApp = angular.module('routerApp', ['ui.router']);
+var routerApp = angular.module('routerApp', ['ui.router','CityModule']);
+
+routerApp.run(function($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+});
+
 routerApp.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('', '/index');
     $stateProvider
@@ -39,20 +45,20 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 //city应该排列在content中
             }
         })
-        .state('content',{
-            url:'/content',
-            views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
-                '': {
-                    templateUrl: 'tpls/content.html'
-                },
-                'city@content': {
-                    templateUrl: 'tpls/city.html'
-                },
-                // '@content':{
-                //     templateUrl:'tpls/refresh.html'
-                // }
-            }
-        })       
+        // .state('content',{
+        //     url:'/content',
+        //     views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
+        //         '': {
+        //             templateUrl: 'tpls/content.html'
+        //         },
+        //         'city@content': {
+        //             templateUrl: 'tpls/city.html'
+        //         },
+        //         // '@content':{
+        //         //     templateUrl:'tpls/refresh.html'
+        //         // }
+        //     }
+        // })       
         .state('home.page1',{
             url:'/refresh',
             templateUrl:'tpls/refresh.html'
@@ -65,22 +71,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             url:'/carsInfo',
             templateUrl:'tpls/carsInfo.html'
         })
-        // .state('childs', {
-        //     url: '/childs',
-        //     views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
-        //         '': {
-        //             templateUrl: 'tpls/refresh.html'
-        //         },
-        //         'child1@childs': {
-        //             templateUrl: 'tpls/refresh.html'
-        //         },
-        //         'child2@childs': {
-        //             templateUrl: 'tpls/settop.html'
-        //         },
-        //         'child3@childs': {
-        //             templateUrl: 'tpls/carsInfo.html'
-        //         }
-        //     }
-        // })
-
+        .state('city',{
+            url:'/city',
+            templateUrl:'tpls/city.html'
+        })
 })
