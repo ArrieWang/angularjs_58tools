@@ -1,0 +1,22 @@
+<input type="text" ng-model="yourName" placeholder="Enter a name here">
+	<h1>Hello,{{name}},{{yourName}}!</h1>
+	<div ng-controller="MyController">{{person.age}}</div>
+
+	<div ng-controller="MessageController">  
+    Delayed Message: {{message}}
+    <!--ng-click 为所在的DOM元素加一个点击的事件监听-->
+    <button ng-click="counter = counter + 1">Add one</button>
+Current counter: {{ counter }}  
+  	</div>
+  	<!--   ng-init初始化(在页面中DOM加载之前)   -->
+  	<b ng-init='name = "arrie"'>Hello, {{ name }}</b>
+	<!--   ng-show/ng-hide根据被赋的true/false值显示或隐藏所在DOM内容   -->
+  	<button ng-init="shouldShow = true" ng-click="shouldShow = !shouldShow">Flip the shouldShow variable</button>
+ 	<div ng-show="shouldShow">
+  	 <h3>Showing {{ shouldShow }}</h3>
+	 </div> 
+ 	<div ng-hide="shouldShow">
+ 	  <h3>Hiding {{ shouldShow }}</h3>
+ 	</div>
+  <!--ng-repeat 遍历$scope中的数据1.person in $scope对象(数组类型数据)/2.(key,value) in $scope对象(key-value类型值)-->
+  

@@ -1,0 +1,34 @@
+<form>
+  <div class="form-group">
+    <label for="cityType">城市</label>
+    <input type="text" class="form-control" placeholder="城市" id="cityType">
+  </div>
+  <p>最大推送量:<span>{{}}</span></p>
+  <div class="form-group">
+    <label for="setData">推送量</label>
+    <input type="text" class="form-control" placeholder="推送量" id="setData">
+  </div>
+  <div class="form-group">
+    <label for="dayTimes">推送天数</label>
+    <select class="form-control">
+      <option ng-repeat="dataTime in dataTimes" id="dayTimes">{{dataTime}}</option>
+    </select>
+  </div>
+  <p>所需推送点:<span>{{}}</span></p>
+  <p>剩余推送点:<span>{{}}</span></p>
+  <p>优先推送点:<span>{{}}</span></p>
+  <div class="freshType">
+    <label class="radio-inline">刷新点设置
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">只今天刷新
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">到优先结束
+    </label>
+  </div>
+  <div class="freshTime">
+    <label class="checkbox-inline" ng-repeat="frTime in frTimes">预约时长
+      <input type="checkbox" id="inlineCheckbox1" value="option1">{{frTime}}
+    </label>    
+  </div>
+  <button type="submit" class="btn btn-default">提交</button>
+</form>
