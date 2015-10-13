@@ -1,0 +1,18 @@
+/*common style*/
+.contenters{
+	width: 1000px;
+	margin: 0 auto;
+}
+/*header*/
+header{
+	font-size:16px;
+}
+header span{
+	display: inline-block;
+	margin-left: 10px;
+}
+header a{
+	float: right;
+	display: inline-block;
+	margin-right: 10px;
+}

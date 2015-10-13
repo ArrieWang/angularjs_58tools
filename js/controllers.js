@@ -4,23 +4,18 @@
  */
 var CityModule = angular.module('CityModule', []);
 CityModule.controller('citySyncCtrl', function($scope, $http, $state, $stateParams){
-	// $scope.citys=[
-	// {cityId:"1",cityName:"beijing"},
-	// {cityId:"2",cityName:"tianjin"},
-	// {cityId:"3",cityName:"shengyang"},
-	// {cityId:"4",cityName:"changchun"},
-	// {cityId:"5",cityName:"haerbin"},
-	// {cityId:"6",cityName:"shenzhen"},
-	// {cityId:"7",cityName:"shanghai"},
-	// {cityId:"8",cityName:"guangzhou"}
-	// ];
-	// $scope.remove = function (index) {
- //            $scope.items.splice(index, 1);
- //        }
+
             $http.get('../data/citys.json')
                 .success(function(data, status, headers, config) {
-                        $scope = JSON.parse(data);
-            }).error(function(data, status, headers, config) {
-                  console.log("error");
+                        $scope.citys = data;
             });
  });
+
+var UserModule = angular.module('UserModule', []);
+UserModule.controller('UserSyncCtrl', function($scope, $http, $state, $stateParams){
+
+            $http.get('../data/users.json')
+            	.success(function(data, status, headers, config) {
+            		$scope.user = data;
+            });
+});
